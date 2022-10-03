@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 const int PotInputpin = A1;\
+const int outPin = 9;\
+int outputLevel=0;\
+\
+void setup() \{\
+  \
+  // put your setup code here, to run once:\
+  pinMode(outPin, OUTPUT);\
+  Serial.begin(9600);\
+\
+\}\
+\
+void loop() \{\
+  int sensorValue = analogRead(A0);\
+  int sensorValue2 = analogRead(A1);\
+  int potValue;\
+  \
+  outputLevel = map(potValue,0,1023,0,255);\
+  \
+  \
+\
+  Serial.print(millis());\
+  Serial.print(',');\
+  analogWrite(outPin , outputLevel);\
+  Serial.print(sensorValue);\
+  Serial.print(',');\
+  Serial.println(sensorValue2);\
+\
+  delay(200);\
+\
+\
+\}}
